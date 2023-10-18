@@ -7,6 +7,7 @@ body {
     box-sizing: inherit;
     height: 100%;
     background: #ECF7F3;
+    overflow: hidden;
 }
 
 a {
@@ -42,6 +43,7 @@ p{
 .container{
     max-width: 1108px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Header */
@@ -104,6 +106,46 @@ p{
     font-style: normal;
     font-weight: 500;
     line-height: normal;
+}
+
+.header__burger-btn{
+    display: none;
+    position: relative;
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: transparent;
+}
+
+.header__burger-btn span{
+    position: absolute;
+    left: 5px;
+    width: 30px;
+    height: 3px;
+    background-color: #333;
+    transition: transform .5s, opacity .5s, background-color .5s;
+}
+
+.header__burger-btn span:nth-child(1){
+    transform: translateY(-10px);
+}
+.header__burger-btn span:nth-child(3){
+    transform: translateY(10px);
+}
+
+.header.open .header__burger-btn span:nth-child(1){
+   transform: translateY(0) rotate(45deg);
+}
+.header.open .header__burger-btn span:nth-child(2){
+    opacity: 0;
+}
+.header.open .header__burger-btn span:nth-child(3){
+    transform: translateY(0) rotate(-45deg);
+}
+
+.header.open .header__burger-btn span{
+    background-color: white;
 }
 
 /* Hero */
@@ -264,6 +306,9 @@ p{
 }
 
 .hero-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
     width: 636px;
     height: 557px;
@@ -279,6 +324,7 @@ p{
     background-color: #48B774;
     background-position: center;
     border-radius: 280px;
+
 }
 
 .hero-right__photo{
@@ -320,7 +366,6 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .hero-flags img {
@@ -350,7 +395,6 @@ p{
 
 .indiaMedium-Flag {
     width: 170px;
-
     top: 60%;
     left: 99%;
     transform: translate(-50%, -50%);
@@ -358,9 +402,12 @@ p{
 
 .india-Flag2{
     width: 140px;
-
     top: 25%;
     left: 93%;
     transform: translate(-50%, -50%);
+}
+
+.flag{
+    position: fixed;
 }
 

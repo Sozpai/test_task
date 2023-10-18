@@ -1,3 +1,4 @@
+
 function validateInput(input) {
     let forbiddenChars = /[@!#$%^&*()]/g;
     input.value = input.value.replace(forbiddenChars, '');
@@ -52,3 +53,10 @@ gsap.to('.hero-flags', {
         autoRotate: true
     }
 });
+
+// Бургер-меню
+document.addEventListener('DOMContentLoaded', function(){
+    document.getElementById('burger').addEventListener('click', function(){
+        document.querySelector(".header").classList.toggle("open")
+    });
+})
